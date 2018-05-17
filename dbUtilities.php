@@ -1,29 +1,34 @@
 <?php
 
-function connect() {
+$servername = "localhost";
+$username = "";
+$password = "";
+$dbname = "test";
 
-   $servername = "localhost";
-   $username = "";
-   $password = "";
-   $dbname = "test";
-
-   $conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
    // Check connection
-   if ($conn->connect_error) {
-       die("Connection failed: " . $conn->connect_error);
-   }
-   else {
-      echo "connected to database.<br>";
-   }
-
+if ($conn->connect_error) {
+   die("Connection failed: " . $conn->connect_error);
 }
 
-function DB_INS ($input, $table) {
+function DB_INS ($input, $table, $conn) {
 
    $sql  = "INSERT INTO " . $table;
-   $sql .= "(". implode(", ", array_keys($customerInputArray )). ")";
-   $sql .= "VALUES ('" . implode("','", $customerInputArray ) . "')";
+   $sql .= "(". implode(", ", array_keys($input )). ")";
+   $sql .= "VALUES ('" . implode("','", $input ) . "')";
    $result = mysqli_query($conn, $sql);
+}
+
+function DB_getAnchor ($anchorField, $conn) {
+
+   $sql = "SELECT custid FROM customer where username = " . "\"" . $anchorField . "\"";
+   $result = mysqli_query($conn, $sql);
+   while($row = mysqli_fetch_assoc($result)) {
+      $anchor = $row["custid"];
+   }
+
+   return $anchor;
+
 }
 
 ?>
