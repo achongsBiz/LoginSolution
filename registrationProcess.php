@@ -4,7 +4,6 @@
 </head>
 <body>
 
-
 <?php
 include("dbUtilities.php");
 
@@ -25,14 +24,14 @@ $regCustid = DB_getAnchor($_POST["username"], $conn);
 $customer_addressInputArray = array(
    "custid" => $regCustid,
    "address_type" => 1,
-	 "street_line1" =>$_POST["street_line1"],
-	 "street_line2" =>$_POST["street_line2"],
-	 "city" => $_POST["city"],
-	 "region" => $_POST["region"],
-	 "postal" => $_POST["postal"],
-	 "country" => $_POST["country"],
-	 "lstupdt_usr" =>	 "sys",
-	 "lstupdt_ts" => date("Y-m-d H:i:s")
+   "street_line1" =>$_POST["street_line1"],
+   "street_line2" =>$_POST["street_line2"],
+   "city" => $_POST["city"],
+   "region" => $_POST["region"],
+   "postal" => $_POST["postal"],
+   "country" => $_POST["country"],
+   "lstupdt_usr" =>	 "sys",
+   "lstupdt_ts" => date("Y-m-d H:i:s")
 );
 DB_INS ($customer_addressInputArray, "customer_address", $conn);
 
@@ -41,8 +40,8 @@ $customer_addressInputArray = array(
    "custid" => $regCustid,
    "contact_type" => 1,
    "contact" => $_POST["email"],
-	 "lstupdt_usr" =>	 "sys",
-	 "lstupdt_ts" => date("Y-m-d H:i:s")
+   "lstupdt_usr" =>	 "sys",
+   "lstupdt_ts" => date("Y-m-d H:i:s")
 );
 DB_INS ($customer_addressInputArray, "customer_contact", $conn);
 
