@@ -1,11 +1,15 @@
-
 <html>
 <head>
+<title>
+Registration Page
+</title>
 </head>
 <body>
 
 <?php
 include("dbUtilities.php");
+
+$conn = DB_connect();
 
 // Populate customer table.
 $customerInputArray = array(
@@ -30,7 +34,7 @@ $customer_addressInputArray = array(
    "region" => $_POST["region"],
    "postal" => $_POST["postal"],
    "country" => $_POST["country"],
-   "lstupdt_usr" =>	 "sys",
+   "lstupdt_usr" => "sys",
    "lstupdt_ts" => date("Y-m-d H:i:s")
 );
 DB_INS ($customer_addressInputArray, "customer_address", $conn);
@@ -40,11 +44,10 @@ $customer_addressInputArray = array(
    "custid" => $regCustid,
    "contact_type" => 1,
    "contact" => $_POST["email"],
-   "lstupdt_usr" =>	 "sys",
+   "lstupdt_usr" => "sys",
    "lstupdt_ts" => date("Y-m-d H:i:s")
 );
 DB_INS ($customer_addressInputArray, "customer_contact", $conn);
-
 ?>
 
 </body>

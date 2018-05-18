@@ -1,14 +1,21 @@
 <?php
 
-$servername = "localhost";
-$username = "";
-$password = "";
-$dbname = "test";
+function DB_connect()
+{
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-   // Check connection
-if ($conn->connect_error) {
-   die("Connection failed: " . $conn->connect_error);
+   $servername = "localhost";
+   $username = "";
+   $password = "";
+   $dbname = "test";
+
+   $conn = new mysqli($servername, $username, $password, $dbname);
+
+   if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+   }
+
+   return $conn;
+
 }
 
 function DB_INS ($input, $table, $conn) {
