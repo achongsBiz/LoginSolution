@@ -1,3 +1,12 @@
+<?php
+/*
+Module: registration.php
+Project: Login Solution
+Log:
+20180515 - Initial Revision.
+*/
+?>
+
 <html>
 <title>
 Registration Page
