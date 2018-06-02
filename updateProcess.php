@@ -12,12 +12,20 @@ include("utilities.php");
 include("dbUtilities.php");
 ?>
 
-<?php
+<html>
+<head>
+<title>
+Update Page
+</title>
+</head>
+<body>
 
+<?php
 $username = getUser();
 $conn = DB_connect();
 $regCustid = DB_getAnchor($username, $conn);
 
+// Update customer table.
 $customerInputArray = array(
    "firstname" => $_POST["firstname"],
    "lastname" => $_POST["lastname"],
@@ -27,6 +35,7 @@ $customerInputArray = array(
 );
 DB_UPD ($customerInputArray, $username, "customer", $conn);
 
+// Update customer_address table.
 $customer_addressInputArray = array(
    "street_line1" =>$_POST["street_line1"],
    "street_line2" =>$_POST["street_line2"],
@@ -38,6 +47,7 @@ $customer_addressInputArray = array(
 );
 DB_UPD($customer_addressInputArray, $username, "customer_address", $conn);
 
+// Update customer customer_contact table.
 $customer_contactInputArray = array(
    "contact" => $_POST["contact"],
    "lstupdt_usr" => "sys",
@@ -45,3 +55,12 @@ $customer_contactInputArray = array(
 );
 DB_UPD($customer_contactInputArray, $username, "customer_contact", $conn);
 ?>
+
+<H3>Update successful.</H3>
+
+<?php
+renderMenu();
+?>
+
+</body>
+</html>

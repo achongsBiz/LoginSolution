@@ -7,7 +7,6 @@ Log:
 */
 include("utilities.php");
 $loggedIn = checkLogin();
-
 ?>
 
 <html>
@@ -23,7 +22,8 @@ You are already logged in.<br>
 <form action="loginProcess.php" method="post">
 username:</td><td><input type="text" name="username"><br><br>
 password:</td><td><input type="password" name="credential"><br><br>
-<input type="submit">
+<input type="submit"><br><br>
+New here? You can <a href="registration.php"> register here!</a>
 </form>
 
 <?php endif; ?>

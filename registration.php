@@ -8,29 +8,29 @@ Log:
 ?>
 
 <html>
+<head>
 <title>
 Registration Page
 </title>
+<script type="text/javascript" src="clientSide.js"></script>
+</head>
 <body>
 
 <h1>Please fill out the following form to register</h1>
-<form action="registrationProcess.php" method="post">
+<form  method="post" action="registrationProcess.php" onsubmit="return validateRegInput();">
 
 <table>
-<tr><td>username:</td><td><input type="text" name="username"></td></tr>
-<tr><td>password:</td><td><input type="password" name="credential"></td></tr><br>
-<tr><td>first name:</td><td> <input type="text" name="firstname"><br>
-<tr><td>last name:</td><td> <input type="text" name="lastname"><br>
-
-<tr><td>Street Address first line:</td><td> <input type="text" name="street_line1"></td></tr>
-<tr><td>Street Address second line:</td><td> <input type="text" name="street_line2"></td></tr>
-<tr><td>City:</td><td> <input type="text" name="city"></td></tr>
-<tr><td>Region:</td><td> <input type="text" name="region"></td></tr>
-<tr><td>Postal Code:</td><td> <input type="text" name="postal"></td></tr>
-<tr><td>Country:</td><td> <input type="text" name="country"></td></tr>
-
-<tr><td>Email:</td><td>  <input type="text" name="email"></td></tr>
-<tr><td>Phone:</td><td>  <input type="text" name="phone"></td></tr>
+<tr><td>username:</td><td><input type="text" name="username" id="userName"></td></tr>
+<tr><td>password:</td><td><input type="password" name="credential" id="credential"></td></tr><br>
+<tr><td>first name:</td><td> <input type="text" name="firstname" id="firstName"><br>
+<tr><td>last name:</td><td> <input type="text" name="lastname" id="lastName"><br>
+<tr><td>Street Address first line:</td><td> <input type="text" name="street_line1" id="streetLine1"></td></tr>
+<tr><td>Street Address second line:</td><td> <input type="text" name="street_line2" id="streetLine2"></td></tr>
+<tr><td>City:</td><td> <input type="text" name="city" id="city"></td></tr>
+<tr><td>Region:</td><td> <input type="text" name="region" id="region"></td></tr>
+<tr><td>Postal Code:</td><td> <input type="text" name="postal" id="postalCode"></td></tr>
+<tr><td>Country:</td><td> <input type="text" name="country" id="country"></td></tr>
+<tr><td>Email:</td><td>  <input type="text" name="email" id="email"></td></tr>
 </table>
 
 <input type="submit">

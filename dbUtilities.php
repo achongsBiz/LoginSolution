@@ -14,6 +14,7 @@ Function returns a database connection.
 function DB_connect()
 {
 
+   //**Obviously in a real environment this should be secured**.
    $servername = "localhost";
    $username = "";
    $password = "";
@@ -56,7 +57,6 @@ function DB_UPD ($input, $username, $table, $conn) {
    $sql = substr($preSql, 0, -1) . "WHERE custid = " . $anchor;
 
    $result = mysqli_query($conn, $sql);
-   echo "update successful!<br>";
 }
 
 /**********

@@ -34,20 +34,24 @@ function getUser() {
 Function expires cookie.
 **********/
 function zeroCookie() {
-   $username = $_COOKIE["testApp"];
-   setcookie("testApp", $username, time()-300);
+
+   $check = isset($_COOKIE["testApp"]);
+   if ($check) {
+      $username = $_COOKIE["testApp"];
+      setcookie("testApp", $username, time()-300);
+   }
 }
 
 /**********
-Function checks if referrer is from a valid source.
+Function renders navigation menu.
 **********/
-function checkRef($source)
+function renderMenu()
 {
-
-   echo $_SERVER['HTTP_REFERER'];
-   if ($_SERVER['HTTP_REFERER'] != $source)
-   {
-      die("You have reached an invalid page");
-   }
+   echo "<ul>Here is what you can do now:"
+   . "<ul>"
+   . "<li><a href=\"update.php\">Update your info.</a></li>"
+   . "<li><a href=\"logout.php\">Logout.</a></li>"
+   . "</ul>";
 }
+
 ?>

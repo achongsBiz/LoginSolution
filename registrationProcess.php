@@ -9,8 +9,14 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
    die("Not allowed to be here");
 }
 include("dbUtilities.php");
-}
+include("utilities.php");
 ?>
+
+<html>
+<head>
+<title>Registration Page</title>
+</head>
+<body>
 
 <?php
 $conn = DB_connect();
@@ -52,6 +58,12 @@ $customer_addressInputArray = array(
    "lstupdt_ts" => date("Y-m-d H:i:s")
 );
 DB_INS ($customer_addressInputArray, "customer_contact", $conn);
+?>
+
+<H3>Registration successful.</H3>
+
+<?php
+renderMenu();
 ?>
 
 </body>

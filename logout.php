@@ -10,7 +10,7 @@ include("utilities.php");
 
 <html>
 <title>
-Logout
+Logout Page
 </title>
 <body>
 
@@ -20,6 +20,6 @@ Logout
 ?>
 
 You have logged out.<br><br>
-<a href="login.php">Log In Again.</a>
+<a href="login.php">Log In</a>
 </body>
 </html>

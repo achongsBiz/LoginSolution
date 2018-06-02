@@ -45,7 +45,11 @@ if ($verify_hash == 1) {
    setcookie("testApp", $username, time()+300);
 }
 ?>
-You have logged in.
+You have logged in.<br>
+
+<?php
+renderMenu();
+?>
 
 <?php endif; ?>
 
