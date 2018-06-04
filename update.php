@@ -12,15 +12,12 @@ $loggedIn = checkLogin();
 
 <html>
 <head>
-<title>
-Registration Page
-</title>
-<script type="text/javascript" src="clientSide.js"></script>
+   <title>Registration Page</title>
+   <script type="text/javascript" src="clientSide.js"></script>
 </head>
 <body>
-<h1>You can update your information</h1>
+You can update your information here.<br><br>
 <form action="updateProcess.php" method="post" onsubmit="return validateUpdInput();">
-<table>
 
 <?php if ($loggedIn) :
 
@@ -42,8 +39,8 @@ while ($row = mysqli_fetch_assoc($currentValues)) {
    . "<tr><td>Contact:</td><td><input type=\"text\" id=\"email\" name=\"contact\" value=\"" . $row["contact"] ."\"></td></tr>"
    . "</table>"
    . "<input type=\"submit\" value=\"Update\">"
-   . "</form>";
-
+   . "</form>"
+   . "<p id=\"validationResults\"></p>";
 }
 ?>
 

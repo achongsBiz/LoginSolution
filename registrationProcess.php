@@ -6,7 +6,7 @@ Log:
 20180515 - Initial Revision.
 */
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
-   die("Not allowed to be here");
+   die("Not allowed to be here.");
 }
 include("dbUtilities.php");
 include("utilities.php");
@@ -14,12 +14,19 @@ include("utilities.php");
 
 <html>
 <head>
-<title>Registration Page</title>
+   <title>Registration Page</title>
 </head>
 <body>
 
 <?php
 $conn = DB_connect();
+
+// Check if username exists.
+$rowCheck = DB_rowCheck($conn, $_POST["username"]);
+if ($rowCheck == true )
+{
+   die("User name already exists.");
+}
 
 // Populate customer table.
 $customerInputArray = array(
@@ -58,13 +65,12 @@ $customer_addressInputArray = array(
    "lstupdt_ts" => date("Y-m-d H:i:s")
 );
 DB_INS ($customer_addressInputArray, "customer_contact", $conn);
+
+mysqli_close($conn);
 ?>
 
-<H3>Registration successful.</H3>
-
-<?php
-renderMenu();
-?>
+Registration successful. You can now login.<br>
+<a href="login.php">Log In</a>
 
 </body>
 </html>

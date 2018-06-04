@@ -31,11 +31,19 @@ $conn = DB_connect();
 $username = $_POST["username"];
 $credential = $_POST["credential"];
 $loggedIn = false;
+
 $sql = "SELECT credential FROM customer where username = " . "\"" . $username . "\"";
 $result = mysqli_query($conn, $sql);
+
+$rowCount = mysqli_num_rows($result);
+
+if ($rowCount != 1) {
+   die("You have entered an incorrect username or password. <a href=\"login.php\">Please Try Again.</a>");
+}
+
 while($row = mysqli_fetch_assoc($result)) {
       $hash = $row["credential"];
- }
+}
 
 // If credential matches unhashed value, then set the login
 // flag to true and create a cookie.
@@ -44,7 +52,10 @@ if ($verify_hash == 1) {
    $loggedIn = true;
    setcookie("testApp", $username, time()+300);
 }
+
+mysqli_close($conn);
 ?>
+
 You have logged in.<br>
 
 <?php

@@ -88,4 +88,21 @@ function DB_getAnchor ($anchorField, $conn) {
 
    return $anchor;
 }
+
+/**********
+Function checks if a username already exists.
+**********/
+function DB_rowCheck($conn, $username) {
+
+   $userExists = false;
+   $sql = "SELECT custid FROM customer where username = " . "\"" . $username . "\"";
+   $result = mysqli_query($conn, $sql);
+   $rowCount = mysqli_num_rows($result);
+
+   if ($rowCount == 1) {
+      $userExists = true;
+   }
+
+   return $userExists;
+}
 ?>

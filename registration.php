@@ -9,14 +9,12 @@ Log:
 
 <html>
 <head>
-<title>
-Registration Page
-</title>
-<script type="text/javascript" src="clientSide.js"></script>
+   <title>Registration Page</title>
+   <script type="text/javascript" src="clientSide.js"></script>
 </head>
 <body>
 
-<h1>Please fill out the following form to register</h1>
+Please fill out the following form to register.<br><br>
 <form  method="post" action="registrationProcess.php" onsubmit="return validateRegInput();">
 
 <table>
@@ -35,6 +33,6 @@ Registration Page
 
 <input type="submit">
 </form>
-
+<p id="validationResults"></p>
 </body>
 </html>

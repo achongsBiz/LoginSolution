@@ -9,9 +9,9 @@ include("utilities.php");
 ?>
 
 <html>
-<title>
-Logout Page
-</title>
+<head>
+   <title>Logout Page</title>
+</head>
 <body>
 
 <?php

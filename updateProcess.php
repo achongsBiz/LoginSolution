@@ -14,9 +14,7 @@ include("dbUtilities.php");
 
 <html>
 <head>
-<title>
-Update Page
-</title>
+   <title>Update Page</title>
 </head>
 <body>
 
@@ -54,9 +52,11 @@ $customer_contactInputArray = array(
    "lstupdt_ts" => date("Y-m-d H:i:s")
 );
 DB_UPD($customer_contactInputArray, $username, "customer_contact", $conn);
+
+mysqli_close($conn);
 ?>
 
-<H3>Update successful.</H3>
+Update successful.<br>
 
 <?php
 renderMenu();

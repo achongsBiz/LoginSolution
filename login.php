@@ -10,9 +10,9 @@ $loggedIn = checkLogin();
 ?>
 
 <html>
-<title>
-Login Page
-</title>
+<head>
+   <title>Login Page</title>
+</head>
 <body>
 
 <?php if($loggedIn) :?>
