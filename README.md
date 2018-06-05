@@ -1,5 +1,4 @@
 # LoginSolution
-Status: WIP
 
 A user authentication solution that combines client side scripting (JS), server side scripting (PHP), with a MySQL/MariaDB database.
 
