@@ -18,17 +18,17 @@ Please fill out the following form to register.<br><br>
 <form  method="post" action="registrationProcess.php" onsubmit="return validateRegInput();">
 
 <table>
-<tr><td>username:</td><td><input type="text" name="username" id="userName"></td></tr>
-<tr><td>password:</td><td><input type="password" name="credential" id="credential"></td></tr><br>
-<tr><td>first name:</td><td> <input type="text" name="firstname" id="firstName"><br>
-<tr><td>last name:</td><td> <input type="text" name="lastname" id="lastName"><br>
-<tr><td>Street Address first line:</td><td> <input type="text" name="street_line1" id="streetLine1"></td></tr>
-<tr><td>Street Address second line:</td><td> <input type="text" name="street_line2" id="streetLine2"></td></tr>
-<tr><td>City:</td><td> <input type="text" name="city" id="city"></td></tr>
-<tr><td>Region:</td><td> <input type="text" name="region" id="region"></td></tr>
-<tr><td>Postal Code:</td><td> <input type="text" name="postal" id="postalCode"></td></tr>
-<tr><td>Country:</td><td> <input type="text" name="country" id="country"></td></tr>
-<tr><td>Email:</td><td>  <input type="text" name="email" id="email"></td></tr>
+<tr><td>username:</td><td><input type="text" name="username" id="userName" maxlength="10"></td></tr>
+<tr><td>password:</td><td><input type="password" name="credential" id="credential" maxlength="10"></td></tr><br>
+<tr><td>first name:</td><td> <input type="text" name="firstname" id="firstName" maxlength="30"><br>
+<tr><td>last name:</td><td> <input type="text" name="lastname" id="lastName" maxlength="30"><br>
+<tr><td>Street Address first line:</td><td> <input type="text" name="street_line1" id="streetLine1" maxlength="30"></td></tr>
+<tr><td>Street Address second line:</td><td> <input type="text" name="street_line2" id="streetLine2" maxlength="30"></td></tr>
+<tr><td>City:</td><td> <input type="text" name="city" id="city" maxlength="30"></td></tr>
+<tr><td>Region:</td><td> <input type="text" name="region" id="region" maxlength="30"></td></tr>
+<tr><td>Postal Code:</td><td> <input type="text" name="postal" id="postalCode" maxlength="5"></td></tr>
+<tr><td>Country:</td><td> <input type="text" name="country" id="country" maxlength="30"></td></tr>
+<tr><td>Email:</td><td>  <input type="text" name="email" id="email" maxlength="30"></td></tr>
 </table>
 
 <input type="submit">

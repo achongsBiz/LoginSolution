@@ -31,26 +31,26 @@ $conn = DB_connect();
 $username = $_POST["username"];
 $credential = $_POST["credential"];
 $loggedIn = false;
-
 $sql = "SELECT credential FROM customer where username = " . "\"" . $username . "\"";
 $result = mysqli_query($conn, $sql);
 
+// Evaluate if username exists.
 $rowCount = mysqli_num_rows($result);
-
 if ($rowCount != 1) {
    die("You have entered an incorrect username or password. <a href=\"login.php\">Please Try Again.</a>");
 }
 
+// Evaluate if password matches.
 while($row = mysqli_fetch_assoc($result)) {
       $hash = $row["credential"];
 }
-
-// If credential matches unhashed value, then set the login
-// flag to true and create a cookie.
 $verify_hash =  password_verify ($credential, $hash);
 if ($verify_hash == 1) {
    $loggedIn = true;
    setcookie("testApp", $username, time()+300);
+}
+else {
+   die("You have entered an incorrect username or password. <a href=\"login.php\">Please Try Again.</a>");
 }
 
 mysqli_close($conn);
